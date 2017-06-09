@@ -1,0 +1,4 @@
+PART="/dev/sda1"
+LANG_TMP="en_US.UTF-8"
+ZONE="/usr/share/zoneinfo/Asia/Kolkata"
+USER_TMP="rex"
