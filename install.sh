@@ -18,7 +18,7 @@ arch-chroot /mnt  /bin/bash -c 'echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers'
 arch-chroot /mnt  /bin/bash -c 'pacman -S grub-bios --noconfirm'
 arch-chroot /mnt  /bin/bash -c 'grub-install --target=i386-pc --recheck ${PART::-1}'
 arch-chroot /mnt  /bin/bash -c "cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo"
-# arch-chroot /mnt  /bin/bash -c  "pacman -S os-prober --noconfirm"
+arch-chroot /mnt  /bin/bash -c  "pacman -S os-prober --noconfirm"
 arch-chroot /mnt  /bin/bash -c  "grub-mkconfig -o /boot/grub/grub.cfg"
 
 
