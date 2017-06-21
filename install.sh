@@ -1,5 +1,6 @@
 #!/bin/bash
 source config
+mkdir /mnt
 mount $PART /mnt
 pacstrap -i /mnt base
 genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -9,8 +10,11 @@ arch-chroot /mnt  /bin/bash -c 'export LANG="en_US.UTF-8" '
 arch-chroot /mnt  /bin/bash -c "ln -s $ZONE /etc/localtime"
 arch-chroot /mnt  /bin/bash -c "hwclock --systohc --utc"
 arch-chroot /mnt  /bin/bash -c  'printf "[multilib]\nInclude = /etc/pacman.d/mirrorlist"'
+arch-chroot /mnt  /bin/bash -c  "systemctl enable dhcpcd"
+arch-chroot /mnt  /bin/bash -c  "systemctl start dhcpcd"
 arch-chroot /mnt  /bin/bash -c "pacman -Sy"
 arch-chroot /mnt  /bin/bash -c  "passwd"
+##enter root password
 arch-chroot /mnt  /bin/bash -c "useradd -m -g users -G wheel,storage,power -s /bin/bash $USER_TMP"
 arch-chroot /mnt  /bin/bash -c  "passwd $USER_TMP"
 arch-chroot /mnt  /bin/bash -c "pacman -S sudo --noconfirm"
