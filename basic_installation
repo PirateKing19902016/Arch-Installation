@@ -1,0 +1,17 @@
+#!/bin/bash
+
+##installing packages
+
+sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-font-utils xorg-xinput xorg-xev xorg-xbacklight i3
+sudo pacman -S feh ffmpeg thunar tar screenfetch scrot lxappearance imagemagick ntfs-3g unzip rofi compton conky
+sudo pacman -S base-devel htop autoconf automake binutils fakeroot
+sudo pacman -S libreoffice noto-fonts powerline-fonts mplayer qutebrowser chromium firefox breeze-icons mesa
+sudo pacman -S sakura tmux git fish ranger
+sudo pacman -S gvfs gvfs-mtp libmtp thunar-archive-plugin thunar-media-tags-plugin thunar-volman ffmpegthumbnailer tumbler
+sudo pacman -S meld
+sudo pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-firmware pulseaudio-bluetooth alsa-plugins 
+sudo pacman -S mcomix zathura-pdf-mupdf 
+sudo pacman -S sqlite sqlitebrowser putty freecad blender
+
+#Setting yaourt
+sudo pacman -S --needed base-devel git wget yajl
